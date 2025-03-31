@@ -1,0 +1,39 @@
+{
+    "system_config_file": {
+        "ox": "",
+        "g": ".gitconfig",
+        "vi": ".vimrc",
+        "zs": ".zshrc"
+    },
+    "builtin_config_file": {
+        "oxc": ".condarc",
+        "oxg": ".gitconfig",
+        "oxwz": "wezterm.lua"
+    },
+    "plugin_file": {
+        "gpod": "plugins/os-debians.sh",
+        "gpom": "plugins/os-macos.sh",
+        "gpor": "plugins/os-rehats.sh",
+        "gpow": "plugins/os-windows.sh",
+        "gpcbw": "plugins/cli-bitwarden.sh",
+        "gpces": "plugins/cli-espanso.sh",
+        "gpcjr": "plugins/cli-jupyter.sh",
+        "gpcol": "plugins/cli-ollama.sh",
+        "gpcvs": "plugins/cli-vscode.sh",
+        "gpljl": "plugins/lang-julia.sh",
+        "gplrb": "plugins/lang-ruby.sh",
+        "gplrs": "plugins/lang-rust.sh",
+        "gppb": "plugins/pkg-brew.sh",
+        "gppc": "plugins/pkg-conda.sh",
+        "gppnj": "plugins/pkg-npm.sh",
+        "gpppx": "plugins/pkg-pixi.sh",
+        "gpps": "plugins/pkg-scoop.sh",
+        "gpptl": "plugins/pkg-tlmgr.sh",
+        "gpuf": "plugins/utils-files.sh",
+        "gpufm": "plugins/utils-formats.sh",
+        "gpunw": "plugins/utils-networks.sh",
+        "gpxns": "plugins/xtra-notes.sh"
+    },
+    "plugin_load": [],
+    "backup_config_file": {}
+}
