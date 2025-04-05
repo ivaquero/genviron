@@ -8,7 +8,25 @@ import (
 	"github.com/tidwall/gjson"
 )
 
-func ReadPathConfig(homeDir string, genvDir string) {
+var theOS = runtime.GOOS
+var theArch = runtime.GOARCH
+var homeDir = os.Getenv("HOME")
+
+func SetSysEnvVar() {
+
+	switch theOS {
+	case "darwin":
+		if theArch == "arm64" {
+			os.Setenv("TERMINFO", "/usr/share/terminfo")
+		} else {
+			os.Setenv("TERMINFO", "/usr/local/share/terminfo")
+		}
+		os.Setenv("APPDATA", homeDir+"/Library/'Application Support'")
+		os.Setenv("Cache", homeDir+"/Library/Cache")
+	}
+}
+
+func ReadPathConfig(genvDir string) {
 	GENVBUILTIN := make(map[string]string)
 	GENVSYS := make(map[string]string)
 
@@ -35,9 +53,10 @@ func ReadPathConfig(homeDir string, genvDir string) {
 		GENVSYS[key] = homeDir + value
 	}
 
-	switch os := runtime.GOOS; os {
+	appDataDir := os.Getenv("APPDATA")
+	switch theOS {
 	case "darwin":
-		GENVSYS["lg"] = "/Library/Application Support/lazygit/config.yml"
+		GENVSYS["lg"] = appDataDir + "/lazygit/config.yml"
 		GENVSYS["wz"] = homeDir + "/.config/wezterm/wezterm.lua"
 	case "linux":
 		GENVSYS["lg"] = homeDir + "/.config/lazygit/config.yml"
@@ -48,7 +67,6 @@ func ReadPathConfig(homeDir string, genvDir string) {
 }
 
 func main() {
-	homeDir := os.Getenv("HOME")
 	genvDirDefault := homeDir + "/genviron"
 
 	if os.Getenv("GENVIRON") == "" {
@@ -56,5 +74,6 @@ func main() {
 	}
 	genvDir := os.Getenv("GENVIRON")
 
-	ReadPathConfig(homeDir, genvDir)
+	SetSysEnvVar()
+	ReadPathConfig(genvDir)
 }

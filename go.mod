@@ -1,4 +1,4 @@
-module main
+module genviron
 
 go 1.24.2
 
