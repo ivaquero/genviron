@@ -1,0 +1,61 @@
+{
+    "builtin_config_files": [
+        {
+            "name": "condarc",
+            "alias": "c",
+            "path": "/.condarc"
+        },
+        {
+            "name": "gitconfig",
+            "alias": "g",
+            "path": "/.gitconfig"
+        },
+        {
+            "name": "wezterm",
+            "alias": "wz",
+            "path": "/wezterm.lua"
+        }
+    ],
+    "sys_config_files": [
+        {
+            "name": "zsh",
+            "alias": "zs",
+            "path": "/.zshrc"
+        },
+        {
+            "name": "zsh_history",
+            "alias": "zshs",
+            "path": "/.zsh_history"
+        },
+        {
+            "name": "bash",
+            "alias": "bs",
+            "path": "/.bash_profile"
+        },
+        {
+            "name": "bash_history",
+            "alias": "bshs",
+            "path": "/.bash_history"
+        },
+        {
+            "name": "gitconfig",
+            "alias": "g",
+            "path": "/.gitconfig"
+        },
+        {
+            "name": "vim",
+            "alias": "vi",
+            "path": "/.vimrc"
+        },
+        {
+            "name": "docker_custom",
+            "alias": "dk",
+            "path": "/.docker/custom.json"
+        },
+        {
+            "name": "docker_daemon",
+            "alias": "dkd",
+            "path": "/.docker/daemon.json"
+        }
+    ]
+}
